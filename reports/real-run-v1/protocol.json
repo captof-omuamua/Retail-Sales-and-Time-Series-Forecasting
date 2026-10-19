@@ -1,0 +1,140 @@
+{
+  "declared_before_model_fitting_utc": "2026-10-19T02:44:59.863843+00:00",
+  "input_kind": "real_public_mirror",
+  "selection": "lowest pooled development WMAE; ties within 1e-10 follow candidate order",
+  "candidate_tie_order": [
+    "seasonal_naive",
+    "last_observed",
+    "hist_gradient_boosting",
+    "random_forest"
+  ],
+  "features": [
+    "Store",
+    "Dept",
+    "IsHoliday",
+    "IsEaster",
+    "Size",
+    "Week",
+    "Type",
+    "Year"
+  ],
+  "random_forest": {
+    "n_estimators": 56,
+    "max_depth": 20,
+    "max_features": 1.0,
+    "criterion": "squared_error",
+    "min_samples_split": 3,
+    "min_samples_leaf": 2,
+    "random_state": 42,
+    "n_jobs": 2
+  },
+  "hist_gradient_boosting": {
+    "loss": "absolute_error",
+    "max_iter": 100,
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "l2_regularization": 1.0,
+    "early_stopping": false,
+    "random_state": 42,
+    "categorical_features": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false
+    ]
+  },
+  "baseline": "training-only 364-day lag / last series sale / global training median",
+  "holiday_weights": {
+    "original_official_holiday": 5,
+    "other": 1
+  },
+  "target_handling": "all finite targets retained, including negative and zero sales",
+  "hgb_categories": "training-only Store/Dept/Type categories; unknown becomes missing",
+  "rf_category_limitation": "numeric-code threshold splits for nominal Store/Dept/Type",
+  "easter": "separate fixed ISO-week mapping 2010:13,2011:16,2012:14,2013:13; false outside range",
+  "thread_cap": 2,
+  "splits": [
+    {
+      "split": "dev_1",
+      "training_rows": 152374,
+      "validation_rows": 76464,
+      "training_weeks": 52,
+      "validation_weeks": 26,
+      "training_start": "2010-02-05",
+      "training_end": "2011-01-28",
+      "validation_start": "2011-02-04",
+      "validation_end": "2011-07-29",
+      "unseen_series": 39,
+      "unseen_series_rows": 242
+    },
+    {
+      "split": "dev_2",
+      "training_rows": 228838,
+      "validation_rows": 77144,
+      "training_weeks": 78,
+      "validation_weeks": 26,
+      "training_start": "2010-02-05",
+      "training_end": "2011-07-29",
+      "validation_start": "2011-08-05",
+      "validation_end": "2012-01-27",
+      "unseen_series": 65,
+      "unseen_series_rows": 243
+    },
+    {
+      "split": "final_holdout",
+      "training_rows": 305982,
+      "validation_rows": 115588,
+      "training_weeks": 104,
+      "validation_weeks": 39,
+      "training_start": "2010-02-05",
+      "training_end": "2012-01-27",
+      "validation_start": "2012-02-03",
+      "validation_end": "2012-10-26",
+      "unseen_series": 25,
+      "unseen_series_rows": 112
+    }
+  ],
+  "external": {
+    "split": "external_unscored",
+    "training_rows": 421570,
+    "validation_rows": 115064,
+    "training_weeks": 143,
+    "validation_weeks": 39,
+    "training_start": "2010-02-05",
+    "training_end": "2012-10-26",
+    "validation_start": "2012-11-02",
+    "validation_end": "2013-07-26",
+    "unseen_series": 11,
+    "unseen_series_rows": 36
+  },
+  "environment": {
+    "python": "3.14.0",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit_learn": "1.9.1"
+  },
+  "code": {
+    "sha256": {
+      "retail_forecasting.py": "e52a1315044be34ec1586264edf6c7b98ea99f8f2a18d5233f0dc6c3f26bbbbb",
+      "retail_study.py": "0e1847b228bd81d3b79fb62eda7e11f0fb0c13e5c6b15392b545d212627cf3d8",
+      "02_retail_sales_forecasting.ipynb": "0728bba2ac957920739eb7de406afb707524876c1b444b16751b2a7d686d8efe",
+      "requirements-retail.txt": "d4b3b812b3074913ba8db6090589fd036a45dbb58d4d4f0ddb8d6e36b2f16e0e"
+    },
+    "git_revision": "5105aed1407217dcc885132ddf1183556943b14f",
+    "git_diff_sha256": "2ee18882e260d0a63d3843caf5dc061112883d5cb6ebd3d3830a25919e857529",
+    "git_status": [
+      " M .gitignore",
+      " M 02_retail_sales_forecasting.ipynb",
+      "?? requirements-retail.txt",
+      "?? retail_forecasting.py",
+      "?? retail_study.py",
+      "?? scripts/",
+      "?? tests/"
+    ]
+  }
+}

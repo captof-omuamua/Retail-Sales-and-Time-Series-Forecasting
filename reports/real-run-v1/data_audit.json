@@ -1,0 +1,275 @@
+{
+  "input_kind": "real_public_mirror",
+  "provenance": {
+    "original_source": "https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting",
+    "download_source": "https://github.com/Upendradwivedi/Walmart-Data-Analysis",
+    "download_revision": "0c9e352817b8347a6383666bf8c438722ad7ad75",
+    "crosscheck_source": "https://github.com/Kundank21/Walmart-Weekly-Sales-Forecasting",
+    "crosscheck_revision": "192be0b633cc1f766b97e2a684f64a25c4591fdd",
+    "retrieved_client_date": "2026-10-19",
+    "caveat": "Public mirror data; independent Kaggle original-file hashes are not available. Agreement between mirrors is corroboration, not proof of authenticity.",
+    "files": {
+      "features.csv": {
+        "sha256": "56f4892cbfcd018afcb8703f8885bd520ef4bfdc4ee5d2f856cac6a1a3330de6",
+        "bytes": 592289,
+        "rows": 8190,
+        "columns": [
+          "Store",
+          "Date",
+          "Temperature",
+          "Fuel_Price",
+          "MarkDown1",
+          "MarkDown2",
+          "MarkDown3",
+          "MarkDown4",
+          "MarkDown5",
+          "CPI",
+          "Unemployment",
+          "IsHoliday"
+        ],
+        "url": "https://raw.githubusercontent.com/Upendradwivedi/Walmart-Data-Analysis/0c9e352817b8347a6383666bf8c438722ad7ad75/features.csv",
+        "crosscheck_sha256": "56f4892cbfcd018afcb8703f8885bd520ef4bfdc4ee5d2f856cac6a1a3330de6",
+        "byte_identical": true,
+        "parsed_equal": true,
+        "date_min": "2010-02-05",
+        "date_max": "2013-07-26",
+        "distinct_dates": 182
+      },
+      "sampleSubmission.csv": {
+        "sha256": "aea8c9ffbcb120438a305f4818abb3b4863b1da2e3eb974e689183770e8bbba9",
+        "bytes": 2146739,
+        "rows": 115064,
+        "columns": [
+          "Id",
+          "Weekly_Sales"
+        ],
+        "url": "https://raw.githubusercontent.com/Upendradwivedi/Walmart-Data-Analysis/0c9e352817b8347a6383666bf8c438722ad7ad75/sampleSubmission.csv"
+      },
+      "stores.csv": {
+        "sha256": "88d146882923f04c85a24e0e0260a06ec09a173f3fb976a41b77b0d6003044d3",
+        "bytes": 532,
+        "rows": 45,
+        "columns": [
+          "Store",
+          "Type",
+          "Size"
+        ],
+        "url": "https://raw.githubusercontent.com/Upendradwivedi/Walmart-Data-Analysis/0c9e352817b8347a6383666bf8c438722ad7ad75/stores.csv",
+        "crosscheck_sha256": "88d146882923f04c85a24e0e0260a06ec09a173f3fb976a41b77b0d6003044d3",
+        "byte_identical": true,
+        "parsed_equal": true
+      },
+      "test.csv": {
+        "sha256": "6456967c56947d092eda3ced7078d41a90ad2b1e9d0a1621bc4af0d7e8eb1260",
+        "bytes": 2598077,
+        "rows": 115064,
+        "columns": [
+          "Store",
+          "Dept",
+          "Date",
+          "IsHoliday"
+        ],
+        "url": "https://raw.githubusercontent.com/Upendradwivedi/Walmart-Data-Analysis/0c9e352817b8347a6383666bf8c438722ad7ad75/test.csv",
+        "crosscheck_sha256": "6456967c56947d092eda3ced7078d41a90ad2b1e9d0a1621bc4af0d7e8eb1260",
+        "byte_identical": true,
+        "parsed_equal": true,
+        "date_min": "2012-11-02",
+        "date_max": "2013-07-26",
+        "distinct_dates": 39
+      },
+      "train.csv": {
+        "sha256": "65834f65a2ddccc85d8f4bf6544f73625be553f8ca5f8fdee976b9d0c900e95d",
+        "bytes": 12842546,
+        "rows": 421570,
+        "columns": [
+          "Store",
+          "Dept",
+          "Date",
+          "Weekly_Sales",
+          "IsHoliday"
+        ],
+        "url": "https://raw.githubusercontent.com/Upendradwivedi/Walmart-Data-Analysis/0c9e352817b8347a6383666bf8c438722ad7ad75/train.csv",
+        "crosscheck_sha256": "65834f65a2ddccc85d8f4bf6544f73625be553f8ca5f8fdee976b9d0c900e95d",
+        "byte_identical": true,
+        "parsed_equal": true,
+        "date_min": "2010-02-05",
+        "date_max": "2012-10-26",
+        "distinct_dates": 143
+      }
+    }
+  },
+  "files": {
+    "train.csv": {
+      "filename": "train.csv",
+      "sha256": "65834f65a2ddccc85d8f4bf6544f73625be553f8ca5f8fdee976b9d0c900e95d",
+      "bytes": 12842546,
+      "rows": 421570,
+      "columns": [
+        "Store",
+        "Dept",
+        "Date",
+        "Weekly_Sales",
+        "IsHoliday"
+      ],
+      "dtypes": {
+        "Store": "int64",
+        "Dept": "int64",
+        "Date": "str",
+        "Weekly_Sales": "float64",
+        "IsHoliday": "bool"
+      },
+      "missing": {
+        "Store": 0,
+        "Dept": 0,
+        "Date": 0,
+        "Weekly_Sales": 0,
+        "IsHoliday": 0
+      },
+      "duplicate_keys": 0,
+      "stores": 45,
+      "departments": 81,
+      "date_start": "2010-02-05",
+      "date_end": "2012-10-26",
+      "weeks": 143,
+      "targets": {
+        "negative": 1285,
+        "zero": 73,
+        "minimum": -4988.94,
+        "maximum": 693099.36
+      }
+    },
+    "test.csv": {
+      "filename": "test.csv",
+      "sha256": "6456967c56947d092eda3ced7078d41a90ad2b1e9d0a1621bc4af0d7e8eb1260",
+      "bytes": 2598077,
+      "rows": 115064,
+      "columns": [
+        "Store",
+        "Dept",
+        "Date",
+        "IsHoliday"
+      ],
+      "dtypes": {
+        "Store": "int64",
+        "Dept": "int64",
+        "Date": "str",
+        "IsHoliday": "bool"
+      },
+      "missing": {
+        "Store": 0,
+        "Dept": 0,
+        "Date": 0,
+        "IsHoliday": 0
+      },
+      "duplicate_keys": 0,
+      "stores": 45,
+      "departments": 81,
+      "date_start": "2012-11-02",
+      "date_end": "2013-07-26",
+      "weeks": 39
+    },
+    "features.csv": {
+      "filename": "features.csv",
+      "sha256": "56f4892cbfcd018afcb8703f8885bd520ef4bfdc4ee5d2f856cac6a1a3330de6",
+      "bytes": 592289,
+      "rows": 8190,
+      "columns": [
+        "Store",
+        "Date",
+        "Temperature",
+        "Fuel_Price",
+        "MarkDown1",
+        "MarkDown2",
+        "MarkDown3",
+        "MarkDown4",
+        "MarkDown5",
+        "CPI",
+        "Unemployment",
+        "IsHoliday"
+      ],
+      "dtypes": {
+        "Store": "int64",
+        "Date": "str",
+        "Temperature": "float64",
+        "Fuel_Price": "float64",
+        "MarkDown1": "float64",
+        "MarkDown2": "float64",
+        "MarkDown3": "float64",
+        "MarkDown4": "float64",
+        "MarkDown5": "float64",
+        "CPI": "float64",
+        "Unemployment": "float64",
+        "IsHoliday": "bool"
+      },
+      "missing": {
+        "Store": 0,
+        "Date": 0,
+        "Temperature": 0,
+        "Fuel_Price": 0,
+        "MarkDown1": 4158,
+        "MarkDown2": 5269,
+        "MarkDown3": 4577,
+        "MarkDown4": 4726,
+        "MarkDown5": 4140,
+        "CPI": 585,
+        "Unemployment": 585,
+        "IsHoliday": 0
+      },
+      "duplicate_keys": 0,
+      "stores": 45,
+      "date_start": "2010-02-05",
+      "date_end": "2013-07-26",
+      "weeks": 182
+    },
+    "stores.csv": {
+      "filename": "stores.csv",
+      "sha256": "88d146882923f04c85a24e0e0260a06ec09a173f3fb976a41b77b0d6003044d3",
+      "bytes": 532,
+      "rows": 45,
+      "columns": [
+        "Store",
+        "Type",
+        "Size"
+      ],
+      "dtypes": {
+        "Store": "int64",
+        "Type": "str",
+        "Size": "int64"
+      },
+      "missing": {
+        "Store": 0,
+        "Type": 0,
+        "Size": 0
+      },
+      "duplicate_keys": 0,
+      "stores": 45
+    },
+    "sampleSubmission.csv": {
+      "filename": "sampleSubmission.csv",
+      "sha256": "aea8c9ffbcb120438a305f4818abb3b4863b1da2e3eb974e689183770e8bbba9",
+      "bytes": 2146739,
+      "rows": 115064,
+      "columns": [
+        "Id",
+        "Weekly_Sales"
+      ],
+      "dtypes": {
+        "Id": "str",
+        "Weekly_Sales": "int64"
+      },
+      "missing": {
+        "Id": 0,
+        "Weekly_Sales": 0
+      },
+      "duplicate_keys": 0
+    }
+  },
+  "row_preservation": {
+    "train_before": 421570,
+    "train_after": 421570,
+    "test_before": 115064,
+    "test_after": 115064
+  },
+  "overlapping_train_test_keys": 0,
+  "joins": "validated many-to-one; no missing matches; official holiday flags agree"
+}

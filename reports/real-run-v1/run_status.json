@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-10-19T02:44:59.088820+00:00",
+  "input_kind": "real_public_mirror",
+  "status": "complete",
+  "completed_utc": "2026-10-19T02:45:39.019598+00:00",
+  "selected_model": "random_forest",
+  "final_holdout_WMAE": 1607.0775528171794
+}
