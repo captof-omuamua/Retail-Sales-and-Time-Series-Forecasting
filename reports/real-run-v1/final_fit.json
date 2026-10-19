@@ -1,0 +1,9 @@
+{
+  "model": "random_forest",
+  "training_rows": 421570,
+  "training_end": "2012-10-26T00:00:00",
+  "test_rows": 115064,
+  "fit_predict_seconds": 13.187232299998868,
+  "save_reload_identical": true,
+  "submission_sha256": "6ebc17a56d998e9af38e751b1aa0270f0ce12f8ef033d524b5c84028a46bf157"
+}

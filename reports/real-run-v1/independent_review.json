@@ -1,0 +1,79 @@
+{
+  "development": {
+    "hist_gradient_boosting": {
+      "WMAE": 3616.8186587295386,
+      "MAE": 3321.0551886869653,
+      "holiday_MAE": 4569.663354750915,
+      "nonholiday_MAE": 3216.0116469651216,
+      "rows": 153608,
+      "holiday_rows": 11920,
+      "sum_weights": 201288
+    },
+    "last_observed": {
+      "WMAE": 3745.3973539654994,
+      "MAE": 3398.170397798295,
+      "holiday_MAE": 4864.03909647651,
+      "nonholiday_MAE": 3274.849051683981,
+      "rows": 153608,
+      "holiday_rows": 11920,
+      "sum_weights": 201288
+    },
+    "random_forest": {
+      "WMAE": 1912.5194318286465,
+      "MAE": 1835.58419221563,
+      "holiday_MAE": 2160.3774076355153,
+      "nonholiday_MAE": 1808.259823688976,
+      "rows": 153608,
+      "holiday_rows": 11920,
+      "sum_weights": 201288
+    },
+    "seasonal_naive": {
+      "WMAE": 2032.3282598813767,
+      "MAE": 1972.6760102012795,
+      "holiday_MAE": 2224.5065897651,
+      "nonholiday_MAE": 1951.4898793475804,
+      "rows": 153608,
+      "holiday_rows": 11920,
+      "sum_weights": 201288
+    }
+  },
+  "final": {
+    "last_observed": {
+      "WMAE": 3201.2414751606448,
+      "MAE": 3128.4588697789222,
+      "holiday_MAE": 3553.71322775264,
+      "nonholiday_MAE": 3105.310998896197,
+      "rows": 115588,
+      "holiday_rows": 5967,
+      "sum_weights": 139456
+    },
+    "random_forest": {
+      "WMAE": 1607.077552817194,
+      "MAE": 1591.6685343305871,
+      "holiday_MAE": 1681.7003795654655,
+      "nonholiday_MAE": 1586.7678308110387,
+      "rows": 115588,
+      "holiday_rows": 5967,
+      "sum_weights": 139456
+    },
+    "seasonal_naive": {
+      "WMAE": 1805.616137634814,
+      "MAE": 1804.0669547876855,
+      "holiday_MAE": 1813.1185235461703,
+      "nonholiday_MAE": 1803.574250736629,
+      "rows": 115588,
+      "holiday_rows": 5967,
+      "sum_weights": 139456
+    }
+  },
+  "verification": {
+    "all_checks_passed": true,
+    "selected_model": "random_forest",
+    "code_and_input_hashes_unchanged": true,
+    "raw_target_and_holiday_match": true,
+    "complete_expected_row_keys": true,
+    "canonical_fresh_process_pickle_load": true,
+    "all_labeled_rows_in_final_model_history": true,
+    "submission_key_and_prediction_match": true
+  }
+}

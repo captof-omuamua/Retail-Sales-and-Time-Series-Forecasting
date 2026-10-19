@@ -1,0 +1,20 @@
+Input audit and protocol saved before model fitting.
+Development dev_1: seasonal_naive
+  WMAE=2031.036470; fit=0.04s
+Development dev_1: last_observed
+  WMAE=3018.463693; fit=0.00s
+Development dev_1: hist_gradient_boosting
+  WMAE=3015.940846; fit=1.17s
+Development dev_1: random_forest
+  WMAE=1719.332575; fit=4.05s
+Development dev_2: seasonal_naive
+  WMAE=2033.336083; fit=0.00s
+Development dev_2: last_observed
+  WMAE=4312.533159; fit=0.00s
+Development dev_2: hist_gradient_boosting
+  WMAE=4085.608785; fit=1.70s
+Development dev_2: random_forest
+  WMAE=2063.239078; fit=6.69s
+Frozen development winner: random_forest. Revealing final holdout now.
+Refitting selected random_forest on all 421570 labeled rows.
+Complete: random_forest; final local holdout WMAE=1607.077553

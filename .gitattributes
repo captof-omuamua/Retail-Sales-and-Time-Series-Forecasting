@@ -1,0 +1,7 @@
+# Preserve recorded notebook/evidence byte hashes across platforms.
+*.py text eol=lf
+requirements-retail.txt text eol=lf
+02_retail_sales_forecasting.ipynb -text whitespace=cr-at-eol
+reports/** -text whitespace=cr-at-eol
+# Preserve the original generated report's recorded CR bytes exactly.
+reports/real-run-v1/report.md -whitespace
