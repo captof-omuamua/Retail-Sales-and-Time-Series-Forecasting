@@ -1,8 +1,15 @@
 # Retail Sales and Time Series Forecasting
 
-Rebuilt retail forecasting study and a separate LSTM learning example.
+We reran the retail forecasting code with improvements to error calculation, chronological validation, baseline comparison, and submission alignment.
 
-Fresh real-data result: the development-selected Random Forest achieved **1607.077553 local holdout WMAE**, compared with **1805.616138** for seasonal naive. This is a new chronological measurement, not a Kaggle score. See the [result and verification record](reports/real-run-v1/README.md), [protocol](reports/real-run-v1/protocol.json), and [data provenance](reports/real-run-v1/source_manifest.json).
+| Method | Pooled development WMAE | Final holdout WMAE |
+| --- | ---: | ---: |
+| Random Forest | 1912.519432 | **1607.077553** |
+| Seasonal naive | 2032.328260 | 1805.616138 |
+| Last observed | 3745.397354 | 3201.241475 |
+| Histogram gradient boosting | 3616.818659 | Not evaluated (not selected) |
+
+Random Forest was selected using development results before evaluation on the final 39-week holdout (2012-02-03 through 2012-10-26). These are local chronological measurements, not Kaggle scores. See the [result and verification record](reports/real-run-v1/README.md), [protocol](reports/real-run-v1/protocol.json), and [data provenance](reports/real-run-v1/source_manifest.json).
 
 | Notebook | What it covers | Stage |
 | --- | --- | --- |
@@ -54,7 +61,7 @@ Use `--input-kind real_official` only for documented official inputs, or `synthe
 
 The notebook calls this **same** study implementation. Open it from the repository root in a Jupyter-compatible editor using the installed Python kernel. Set its `DATA_DIR`, fresh `OUTPUT_DIR`, `INPUT_KIND`, and real-data `PROVENANCE_PATH` variables, or set `RETAIL_DATA_DIR`, `RETAIL_OUTPUT_DIR`, `RETAIL_INPUT_KIND`, and `RETAIL_PROVENANCE` before kernel startup. The cell headed “Run the predeclared study” reveals final holdout outcomes; earlier plots use only the first 52 weeks.
 
-## Declared methodology
+## Methodology
 
 | Stage | Training weeks | Later scoring weeks | Purpose |
 | --- | --- | --- | --- |
@@ -78,11 +85,11 @@ After final evaluation, the selected method is reconstructed/refitted on **all l
 
 ## Run evidence and interpretation
 
-The run directory contains `data_audit.json`, `source_manifest.json`, `protocol.json`, `selection.json`, `run_status.json`, fold/pooled/final metrics, final week-level errors, row-level development/final predictions, independent metrics recomputed from the saved final CSV, `final_fit.json`, `selected_model.pkl`, `Submission.csv`, and a concise `report.md`. Full precision is retained in machine-readable files; rounding is only for display. Row-level artifacts stay local because they contain original targets. Subgroups without rows have null MAE instead of an invented zero.
+The run directory contains `data_audit.json`, `source_manifest.json`, `protocol.json`, `selection.json`, `run_status.json`, fold/pooled/final metrics, final week-level errors, row-level development/final predictions, independent metrics recomputed from the saved final CSV, `final_fit.json`, `selected_model.pkl`, `Submission.csv`, and a concise `report.md`. Full precision is retained in machine-readable files; rounding is only for display. Row-level artifacts stay local because they contain original targets. Subgroup MAE is null when no matching rows exist.
 
 Git attributes preserve notebook/evidence bytes and use LF for Python/requirements so recorded SHA-256 hashes survive checkout across platforms.
 
-Only newly executed real-data numbers belong in the result report. The final score is a **local chronological holdout** measurement, not an official hidden-test/leaderboard score. External labels are unavailable, so official competition performance remains unknown. Old random-split rankings and unsupported hidden-test numbers were withdrawn; their defects do not establish deliberate fabrication.
+The scores above come from the improved rerun. The final score is a **local chronological holdout** measurement, not an official hidden-test/leaderboard score. External labels are unavailable, so official competition performance remains unknown.
 
 Limitations include short history, only two 26-week development blocks versus a 39-week task, one final holdout, and correlated weeks/stores/departments. The final Feb–Oct holdout includes Super Bowl and Labor Day weeks but **no Thanksgiving or Christmas**; the external Nov–Jul period contains both. Sparse/unseen series and future calendar/economic changes may behave differently. Week-level error spread is descriptive; no narrow confidence interval assuming independent panel rows or forecast-quality guarantee is claimed.
 
