@@ -1,5 +1,7 @@
 # Retail Sales and Time Series Forecasting
 
+[![Retail checks](https://github.com/captof-omuamua/Retail-Sales-and-Time-Series-Forecasting/actions/workflows/retail-checks.yml/badge.svg)](https://github.com/captof-omuamua/Retail-Sales-and-Time-Series-Forecasting/actions/workflows/retail-checks.yml)
+
 We reran the retail forecasting code with improvements to error calculation, chronological validation, baseline comparison, and submission alignment.
 
 | Method | Pooled development WMAE | Final holdout WMAE |
@@ -98,3 +100,12 @@ Limitations include short history, only two 26-week development blocks versus a 
 These notebooks are organised from an existing Colab archive. They remain experiments and learning exercises, not a production forecasting service. Dataset files and model weights are supplied separately. The unrelated LSTM notebook has not been changed or rerun.
 
 [Browse all AI, ML and automation topics](https://github.com/captof-omuamua/Colab-AI-ML-Projects).
+
+## Contributing and maintenance
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, regression checks, notebook smoke verification, and how to report reproducible bugs. [Retail checks](https://github.com/captof-omuamua/Retail-Sales-and-Time-Series-Forecasting/actions/workflows/retail-checks.yml) run the regression suite and execute the actual notebook with synthetic inputs on relevant pushes and pull requests. These automated checks do not rerun the real-data study or establish forecast quality.
+
+## License
+
+Repository code is available under the [MIT License](LICENSE). External datasets, models, dependencies, and any separately attributed third-party components retain their own licenses and access conditions. The license does not grant rights to the competition data supplied separately.
+
